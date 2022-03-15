@@ -12,6 +12,10 @@ const routes: Routes = [
         loadChildren: () => import('./education/education.module').then( m => m.EducationPageModule)
       },
       {
+        path: 'account',
+        loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
