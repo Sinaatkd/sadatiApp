@@ -1,0 +1,7 @@
+{
+  "name": "sadatiApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
