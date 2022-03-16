@@ -92,10 +92,16 @@
         <ion-select-option value="doctorate">دکترا</ion-select-option>
       </ion-select>
     </ion-item>
-
-    <ion-item button color="primary" class="ion-text-center" (click)="onSaveData()" [disabled]="accountFormGroup.invalid">
-      <ion-label>ذخیره</ion-label>
-    </ion-item>
+    
+    <ion-grid>
+      <ion-row class="ion-no-padding">
+        <ion-col size="12" class="ion-no-padding">
+          <ion-button  (click)="onSaveData()" [disabled]="accountFormGroup.invalid" mode="ios" expand="block">
+            ذخیره
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </form>
 
   <!-- <ion-grid class="ion-no-padding">

@@ -20,32 +20,35 @@ export class AccountPage implements OnInit {
   }
 
   ionViewDidEnter() {
-    Storage.get({key: 'userData'}).then(({value}) => {
+    Storage.get({ key: 'userData' }).then(({ value }) => {
       let userData = JSON.parse(value);
       userData = this.checkUserDataValue(userData)
       this.accountFormGroup = new FormGroup({
-        firstName: new FormControl(userData.firstName, {validators: [Validators.required]}),
-        lastName: new FormControl(userData.lastName, {validators: [Validators.required]}),
-        phoneNumber: new FormControl(userData.phoneNumber, {validators: [Validators.required]}),
-        age: new FormControl(userData.age, {validators: [Validators.required]}),
-        healthStatus: new FormControl(userData.healthStatus, {validators: [Validators.required]}),
-        gender: new FormControl(userData.gender, {validators: [Validators.required]}),
-        marital: new FormControl(userData.marital, {validators: [Validators.required]}),
-        job: new FormControl(userData.job, {validators: [Validators.required]}),
-        nationality: new FormControl(userData.nationality, {validators: [Validators.required]}),
-        familyCount: new FormControl(userData.familyCount, {validators: [Validators.required]}),
-        liveWith: new FormControl(userData.liveWith, {validators: [Validators.required]}),
-        education: new FormControl(userData.education, {validators: [Validators.required]})
+        firstName: new FormControl(userData.firstName, { validators: [Validators.required] }),
+        lastName: new FormControl(userData.lastName, { validators: [Validators.required] }),
+        phoneNumber: new FormControl(userData.phoneNumber, { validators: [Validators.required] }),
+        age: new FormControl(userData.age, { validators: [Validators.required] }),
+        healthStatus: new FormControl(userData.healthStatus, { validators: [Validators.required] }),
+        gender: new FormControl(userData.gender, { validators: [Validators.required] }),
+        marital: new FormControl(userData.marital, { validators: [Validators.required] }),
+        job: new FormControl(userData.job, { validators: [Validators.required] }),
+        nationality: new FormControl(userData.nationality, { validators: [Validators.required] }),
+        familyCount: new FormControl(userData.familyCount, { validators: [Validators.required] }),
+        liveWith: new FormControl(userData.liveWith, { validators: [Validators.required] }),
+        education: new FormControl(userData.education, { validators: [Validators.required] })
       });
     })
   }
 
   onSaveData() {
+
     const formData = this.accountFormGroup.controls;
+    const userPhoneNumber = formData.phoneNumber.value.toString();
+    
     const userData = {
       firstName: formData.firstName.value,
       lastName: formData.lastName.value,
-      phoneNumber: "0"+formData.phoneNumber.value,
+      phoneNumber: userPhoneNumber[0] === '0' ? userPhoneNumber : "0" + userPhoneNumber,
       age: formData.age.value,
       healthStatus: formData.healthStatus.value,
       gender: formData.gender.value,
@@ -57,11 +60,11 @@ export class AccountPage implements OnInit {
       education: formData.education.value,
     };
 
-    Storage.set({key: "userData", value: JSON.stringify(userData)}).then(() => {
-      this.toastCtrl.create({message: 'با موفقیت ذخیره شد', color: 'success', duration: 1500}).then(toastEl => {toastEl.present()})
+    Storage.set({ key: "userData", value: JSON.stringify(userData) }).then(() => {
+      this.toastCtrl.create({ message: 'با موفقیت ذخیره شد', color: 'success', duration: 1500 }).then(toastEl => { toastEl.present() })
     })
-    
-    
+
+
   }
 
   checkUserDataValue(userData) {
