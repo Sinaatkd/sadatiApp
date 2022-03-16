@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: AccountPage
+  },
+  {
+    path: 'edit-data',
+    loadChildren: () => import('./edit-data/edit-data.module').then( m => m.EditDataPageModule)
   }
 ];
 
