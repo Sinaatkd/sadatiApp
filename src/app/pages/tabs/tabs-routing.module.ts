@@ -15,16 +15,11 @@ const routes: Routes = [
         path: 'account',
         loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
       },
-      {
-        path: '',
-        redirectTo: '/tabs/tab1',
-        pathMatch: 'full'
-      }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/education',
     pathMatch: 'full'
   },
 ];

@@ -1,9 +1,123 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>account</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>اکانت</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <form *ngIf="accountFormGroup" [formGroup]="accountFormGroup">
+    <ion-item>
+      <ion-label position="floating">نام</ion-label>
+      <ion-input formControlName="firstName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">نام و نام خانوادگی</ion-label>
+      <ion-input formControlName="lastName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">شماره تلفن</ion-label>
+      <ion-input type='number' formControlName="phoneNumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">سن</ion-label>
+      <ion-input type='number' formControlName="age"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>وضعیت سلامت</ion-label>
+      <ion-select placeholder="انتخاب کنید" formControlName="healthStatus">
+        <ion-select-option value="excellent">عالی</ion-select-option>
+        <ion-select-option value="good">خوب</ion-select-option>
+        <ion-select-option value="weak">ضعیف</ion-select-option>
+        <ion-select-option value="veryWeak">خیلی ضعیف</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>جنسیت</ion-label>
+      <ion-select placeholder="انتخاب کنید" formControlName="gender">
+        <ion-select-option value="man">مرد</ion-select-option>
+        <ion-select-option value="woman">زن</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>وضعیت تاهل</ion-label>
+      <ion-select placeholder="انتخاب کنید" formControlName="marital">
+        <ion-select-option value="single">مجرد</ion-select-option>
+        <ion-select-option value="married">متاهل</ion-select-option>
+        <ion-select-option value="divorced">مطلقه</ion-select-option>
+        <ion-select-option value="widow">بیوه</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>شغل</ion-label>
+      <ion-select placeholder="انتخاب کنید" formControlName="job">
+        <ion-select-option value="unemployed">بیکار</ion-select-option>
+        <ion-select-option value="manualWorker">کارگر</ion-select-option>
+        <ion-select-option value="retired">بازنشسته</ion-select-option>
+        <ion-select-option value="employee">کارمند</ion-select-option>
+        <ion-select-option value="housewife">خانه دار</ion-select-option>
+        <ion-select-option value="outOfService">از کار افتاده</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>قومیت</ion-label>
+      <ion-select placeholder="انتخاب کنید" formControlName="nationality">
+        <ion-select-option value="fars">فارس</ion-select-option>
+        <ion-select-option value="balouch">بلوچ</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">تعداد اعضای خانواده</ion-label>
+      <ion-input type="number" formControlName="familyCount"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>با چه کسانی زندگی می کنید</ion-label>
+      <ion-select placeholder="انتخاب کنید" formControlName="liveWith">
+        <ion-select-option value="withSpouse">با همسر</ion-select-option>
+        <ion-select-option value="withSpouseAndChildren">همسر و فرزندان</ion-select-option>
+        <ion-select-option value="withChildren">فرزندان</ion-select-option>
+        <ion-select-option value="withParents">پدر و مادر</ion-select-option>
+        <ion-select-option value="withOther">سایر</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>تحصیلات</ion-label>
+      <ion-select placeholder="انتخاب کنید" formControlName="education">
+        <ion-select-option value="primary">ابداتی</ion-select-option>
+        <ion-select-option value="guidance">راهنمایی</ion-select-option>
+        <ion-select-option value="diploma">دیپلم</ion-select-option>
+        <ion-select-option value="bacherol">لیسانس</ion-select-option>
+        <ion-select-option value="MA">فوق لیسانس</ion-select-option>
+        <ion-select-option value="doctorate">دکترا</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item button color="primary" class="ion-text-center" (click)="onSaveData()" [disabled]="accountFormGroup.invalid">
+      <ion-label>ذخیره</ion-label>
+    </ion-item>
+  </form>
+
+  <!-- <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col size="4" class="ion-no-padding">
+        <ion-item>
+          <ion-label position="floating">قد</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="4" class="ion-no-padding">
+        <ion-item>
+          <ion-label position="floating">وزن</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="4" class="ion-no-padding">
+        <ion-item button class="ion-margin-top">
+          <ion-label>محاسبه BMI</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
 
 </ion-content>
