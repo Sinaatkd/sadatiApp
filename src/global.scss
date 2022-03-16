@@ -54,3 +54,8 @@ ion-toolbar {
     --background: var(--ion-color-primary);
     --color: var(--ion-color-primary-contrast);
 }
+
+ion-item {
+    border-radius: 10px;
+    margin: 10px;
+}
