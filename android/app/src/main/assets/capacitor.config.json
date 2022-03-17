@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "sadatiApp",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
