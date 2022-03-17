@@ -22,6 +22,10 @@ const routes: Routes = [
     redirectTo: '/tabs/education',
     pathMatch: 'full'
   },
+  {
+    path: 'chat',
+    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
+  },
 ];
 
 @NgModule({
