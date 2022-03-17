@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'contact-us',
     loadChildren: () => import('./contact-us/contact-us.module').then( m => m.ContactUsPageModule)
+  },
+  {
+    path: 'submit-report',
+    loadChildren: () => import('./submit-report/submit-report.module').then( m => m.SubmitReportPageModule)
   }
 ];
 

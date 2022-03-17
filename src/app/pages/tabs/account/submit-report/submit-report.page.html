@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ثبت گزارش</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/account"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="reportForm">
+    <ion-item>
+      <ion-label position="floating">وزن خشک</ion-label>
+      <ion-input formControlName="dryWeight" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">وزن قبل از جلسه دیالیز</ion-label>
+      <ion-input formControlName="weightBeforeDialysisSession" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">مقدار مایعات دریافتی</ion-label>
+      <ion-input formControlName="amountOfFluidReceived" type="number"></ion-input>
+    </ion-item>
+    <ion-grid>
+      <ion-row class="ion-no-padding">
+        <ion-col size="12" class="ion-no-padding">
+          <ion-button (click)="onSaveData()" [disabled]='reportForm.invalid' mode="ios" expand="block">
+            ذخیره
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
