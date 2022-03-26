@@ -1,9 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>choose-disease</ion-title>
+    <ion-title>انتخاب بیماری</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/account"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-list-header>
+      <ion-label>بیماری ها</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let disease of diseases">
+      <ion-label>{{ disease.title }}</ion-label>
+      <ion-checkbox (ionChange)="onSelectDisease(disease.title, $event)" [checked]="disease.checked" slot="start"></ion-checkbox>
+    </ion-item>
+    <ion-grid>
+      <ion-row class="ion-no-padding">
+        <ion-col size="12" class="ion-no-padding">
+          <ion-button (click)="onSaveDiseases()" mode="ios" expand="block">
+            ذخیره
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
 </ion-content>
