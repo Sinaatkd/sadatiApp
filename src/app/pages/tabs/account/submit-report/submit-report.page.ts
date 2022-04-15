@@ -54,6 +54,7 @@ export class SubmitReportPage implements OnInit {
           P: formData.P.value,
           Feritin: formData.Feritin.value,
           PTH: formData.PTH.value,
+          date: new Date().toLocaleDateString('fa-IR'),
         }
         reports.push(newReport)
         Storage.set({ key: 'reports', value: JSON.stringify(reports) }).then(_ => {
