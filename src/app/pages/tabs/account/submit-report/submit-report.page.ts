@@ -68,6 +68,17 @@ export class SubmitReportPage implements OnInit {
           dryWeight: formData.dryWeight.value,
           weightBeforeDialysisSession: formData.weightBeforeDialysisSession.value,
           amountOfFluidReceived: formData.amountOfFluidReceived.value,
+          Bun: formData.Bun.value,
+          Cr: formData.Cr.value,
+          Hb: formData.Hb.value,
+          Hct: formData.Hct.value,
+          Na: formData.Na.value,
+          K: formData.K.value,
+          Ca: formData.Ca.value,
+          P: formData.P.value,
+          Feritin: formData.Feritin.value,
+          PTH: formData.PTH.value,
+          date: new Date().toLocaleDateString('fa-IR'),
         }
         reports.push(newReport)
         Storage.set({ key: 'reports', value: JSON.stringify(reports) }).then(_ => {
