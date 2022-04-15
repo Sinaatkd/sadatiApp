@@ -15,6 +15,10 @@ const routes: Routes = [
         path: 'account',
         loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
       },
+      {
+        path: 'health-chart',
+        loadChildren: () => import('./health-chart/health-chart.module').then( m => m.HealthChartPageModule)
+      },
     ]
   },
   {
@@ -22,6 +26,7 @@ const routes: Routes = [
     redirectTo: '/tabs/education',
     pathMatch: 'full'
   },
+
 ];
 
 @NgModule({
