@@ -21,6 +21,16 @@ export class SubmitReportPage implements OnInit {
       dryWeight: new FormControl(null, { validators: Validators.required }),
       weightBeforeDialysisSession: new FormControl(null, { validators: Validators.required }),
       amountOfFluidReceived: new FormControl(null, { validators: Validators.required }),
+      Bun: new FormControl(null, { validators: Validators.required }),
+      Cr: new FormControl(null, { validators: Validators.required }),
+      Hb: new FormControl(null, { validators: Validators.required }),
+      Hct: new FormControl(null, { validators: Validators.required }),
+      Na: new FormControl(null, { validators: Validators.required }),
+      K: new FormControl(null, { validators: Validators.required }),
+      Ca: new FormControl(null, { validators: Validators.required }),
+      P: new FormControl(null, { validators: Validators.required }),
+      Feritin: new FormControl(null, { validators: Validators.required }),
+      PTH: new FormControl(null, { validators: Validators.required }),
     })
   }
 
@@ -34,6 +44,16 @@ export class SubmitReportPage implements OnInit {
           dryWeight: formData.dryWeight.value,
           weightBeforeDialysisSession: formData.weightBeforeDialysisSession.value,
           amountOfFluidReceived: formData.amountOfFluidReceived.value,
+          Bun: formData.Bun.value,
+          Cr: formData.Cr.value,
+          Hb: formData.Hb.value,
+          Hct: formData.Hct.value,
+          Na: formData.Na.value,
+          K: formData.K.value,
+          Ca: formData.Ca.value,
+          P: formData.P.value,
+          Feritin: formData.Feritin.value,
+          PTH: formData.PTH.value,
         }
         reports.push(newReport)
         Storage.set({ key: 'reports', value: JSON.stringify(reports) }).then(_ => {
