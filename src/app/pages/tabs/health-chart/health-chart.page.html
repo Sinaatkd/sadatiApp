@@ -6,81 +6,191 @@
 
 <ion-content>
   <ion-card mode="ios">
-    <ion-card-header>
-      نمودار اوره خون
-    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-header>
+            نمودار اوره خون
+          </ion-card-header>
+        </ion-col>
+        <ion-col size="6" class="ion-text-end">
+          <ion-card-header>
+            <ion-icon (click)="openChartHelpModal('Bun.json')" name="information-circle-sharp"></ion-icon>
+          </ion-card-header>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
     <ion-card-content>
       <canvas #BunCanvas></canvas>
     </ion-card-content>
   </ion-card>
   <ion-card mode="ios">
-    <ion-card-header>
-      نمودار کراتینین
-    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-header>
+            نمودار کراتینین
+          </ion-card-header>
+        </ion-col>
+        <ion-col size="6" class="ion-text-end">
+          <ion-card-header>
+            <ion-icon (click)="openChartHelpModal('Cr.json')" name="information-circle-sharp"></ion-icon>
+          </ion-card-header>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
     <ion-card-content>
       <canvas #CrCanvas></canvas>
     </ion-card-content>
   </ion-card>
   <ion-card mode="ios">
-    <ion-card-header>
-      نمودار هموگلوبین
-    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-header>
+            نمودار هموگلوبین
+          </ion-card-header>
+        </ion-col>
+        <ion-col size="6" class="ion-text-end">
+          <ion-card-header>
+            <ion-icon (click)="openChartHelpModal('Hb.json')" name="information-circle-sharp"></ion-icon>
+          </ion-card-header>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
     <ion-card-content>
       <canvas #HbCanvas></canvas>
     </ion-card-content>
   </ion-card>
   <ion-card mode="ios">
-    <ion-card-header>
-      نمودار هماتوکریت
-    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-header>
+            نمودار هماتوکریت
+          </ion-card-header>
+        </ion-col>
+        <ion-col size="6" class="ion-text-end">
+          <ion-card-header>
+            <ion-icon (click)="openChartHelpModal('Hct.json')" name="information-circle-sharp"></ion-icon>
+          </ion-card-header>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
     <ion-card-content>
       <canvas #HctCanvas></canvas>
     </ion-card-content>
   </ion-card>
   <ion-card mode="ios">
-    <ion-card-header>
-      نمودار سدیم
-    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-header>
+            نمودار سدیم
+          </ion-card-header>
+        </ion-col>
+        <ion-col size="6" class="ion-text-end">
+          <ion-card-header>
+            <ion-icon (click)="openChartHelpModal('Na.json')" name="information-circle-sharp"></ion-icon>
+          </ion-card-header>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
     <ion-card-content>
       <canvas #NaCanvas></canvas>
     </ion-card-content>
   </ion-card>
   <ion-card mode="ios">
-    <ion-card-header>
-      نمودار پتاسیم
-    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-header>
+            نمودار پتاسیم
+          </ion-card-header>
+        </ion-col>
+        <ion-col size="6" class="ion-text-end">
+          <ion-card-header>
+            <ion-icon (click)="openChartHelpModal('K.json')" name="information-circle-sharp"></ion-icon>
+          </ion-card-header>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
     <ion-card-content>
       <canvas #KCanvas></canvas>
     </ion-card-content>
   </ion-card>
   <ion-card mode="ios">
-    <ion-card-header>
-      نمودار کلسیم
-    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-header>
+            نمودار کلسیم
+          </ion-card-header>
+        </ion-col>
+        <ion-col size="6" class="ion-text-end">
+          <ion-card-header>
+            <ion-icon (click)="openChartHelpModal('Ca.json')" name="information-circle-sharp"></ion-icon>
+          </ion-card-header>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
     <ion-card-content>
       <canvas #CaCanvas></canvas>
     </ion-card-content>
   </ion-card>
   <ion-card mode="ios">
-    <ion-card-header>
-      نمودار فسفر
-    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-header>
+            نمودار فسفر
+          </ion-card-header>
+        </ion-col>
+        <ion-col size="6" class="ion-text-end">
+          <ion-card-header>
+            <ion-icon (click)="openChartHelpModal('P.json')" name="information-circle-sharp"></ion-icon>
+          </ion-card-header>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
     <ion-card-content>
       <canvas #PCanvas></canvas>
     </ion-card-content>
   </ion-card>
   <ion-card mode="ios">
-    <ion-card-header>
-      نمودار فریتین
-    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-header>
+            نمودار فریتین
+          </ion-card-header>
+        </ion-col>
+        <ion-col size="6" class="ion-text-end">
+          <ion-card-header>
+            <ion-icon (click)="openChartHelpModal('Feritin.json')" name="information-circle-sharp"></ion-icon>
+          </ion-card-header>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
     <ion-card-content>
       <canvas #FeritinCanvas></canvas>
     </ion-card-content>
   </ion-card>
   <ion-card mode="ios">
-    <ion-card-header>
-      نمودار هورمون پاراتیروئید
-    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-header>
+            نمودار هورمون پاراتیروئید
+          </ion-card-header>
+        </ion-col>
+        <ion-col size="6" class="ion-text-end">
+          <ion-card-header>
+            <ion-icon (click)="openChartHelpModal('PTH.json')" name="information-circle-sharp"></ion-icon>
+          </ion-card-header>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
     <ion-card-content>
       <canvas #PTHCanvas></canvas>
     </ion-card-content>

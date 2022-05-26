@@ -1,6 +1,9 @@
+import { ChartHelpComponent } from './../../../components/chart-help/chart-help.component';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Storage } from '@capacitor/storage';
 import Chart from 'chart.js/auto';
+import { HttpClient } from '@angular/common/http';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-health-chart',
@@ -19,7 +22,6 @@ export class HealthChartPage implements OnInit {
   @ViewChild('PCanvas') private PCanvas: ElementRef;
   @ViewChild('FeritinCanvas') private FeritinCanvas: ElementRef;
   @ViewChild('PTHCanvas') private PTHCanvas: ElementRef;
-  @ViewChild('generalStatsCanvas') private generalStatsCanvas: ElementRef;
   generalStatsChart: any;
   BunChart: any;
   CrChart: any;
@@ -45,7 +47,10 @@ export class HealthChartPage implements OnInit {
   PTHData: number[] = [];
   dates: string[] = [];
 
-  constructor() { }
+  constructor(
+    private http: HttpClient,
+    private modalCtrl: ModalController
+  ) { }
 
   ionViewDidEnter() {
     this.lineChartMethod();
@@ -428,5 +433,14 @@ export class HealthChartPage implements OnInit {
     this.PTHChart.destroy();
     this.PTHData = [];
     this.dates = [];
+  }
+
+  openChartHelpModal(file) {
+    this.modalCtrl.create({
+      component: ChartHelpComponent,
+      componentProps: {file},
+      breakpoints: [0.7, 1],
+      initialBreakpoint: 0.7
+    }).then(modalEl => modalEl.present());
   }
 }
