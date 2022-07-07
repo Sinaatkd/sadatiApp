@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-chart-help',
