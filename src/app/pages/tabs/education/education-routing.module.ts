@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: EducationPage
+  },
+  {
+    path: 'treatment',
+    loadChildren: () => import('./treatment/treatment.module').then( m => m.TreatmentPageModule)
   }
 ];
 
