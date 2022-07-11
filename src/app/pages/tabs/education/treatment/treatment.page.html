@@ -1,9 +1,33 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>treatment</ion-title>
+    <ion-title>تبعیت از درمان</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-accordion-group>
+    <ion-accordion [value]="session.title" *ngFor="let session of sessions">
+      <ion-item lines="none" slot="header" color="light">
+        <ion-icon
+          *ngIf="playingSessionId === session.id"
+          name="volume-high-outline"
+          slot="end"
+          color="primary"
+          mode="md"
+        ></ion-icon>
+        <ion-label>{{ session.title }}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <video *ngFor="let video of session.videos"
+          width="100%"
+          controls
+          controlsList="nodownload"
+          (pause)="onVideoPause($event)"
+          (playing)="onPlayingVideo($event, session.id)"
+        >
+          <source src="/{{ video.video }}" type="video/mp4">
+        </video>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
 </ion-content>
