@@ -25,15 +25,15 @@ export class TreatmentPage implements OnInit {
         {
           video: 'assets/treatment/2.m4v',
         },
+        {
+          video: 'assets/treatment/3.m4v',
+        },
       ],
     },
     {
       id: 3,
       title: 'جلسه ۳',
       videos: [
-        {
-          video: 'assets/treatment/3.m4v',
-        },
         {
           video: 'assets/treatment/4.m4v',
         },
@@ -45,15 +45,6 @@ export class TreatmentPage implements OnInit {
       videos: [
         {
           video: 'assets/treatment/5.m4v',
-        },
-      ],
-    },
-    {
-      id: 5,
-      title: 'جلسه ۵',
-      videos: [
-        {
-          video: 'assets/treatment/6.m4v',
         },
       ],
     },
