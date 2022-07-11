@@ -1,9 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>symptomsOfDialysis</ion-title>
+    <ion-title>علائم دیالیز</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="!isSelectionQuestion">
+  <video width="100%" controls>
+    <source  src="/assets/symptoms-of-dialysis/علائم نهایی.m4v">
+  </video>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>در طول هفته گذشته آیا شما این علائم را تجربه کرده اید؟</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let question of questions">
+      <ion-label>{{ question.title }}</ion-label>
+      <ion-checkbox (ionChange)="onChangeQuestion(question.id)" slot="start"></ion-checkbox>
+    </ion-item>
+    <ion-item button color="primary" class="ion-text-center" (click)="onSave()">
+      <ion-label>ذخیره</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
 
+<ion-content *ngIf="isSelectionQuestion">
+  <ion-list>
+    <ion-item *ngFor="let q of selectedQuestions" (click)="showPdf(q.title, q.filename)">
+      <ion-icon name="document-attach-outline" slot="start" color="danger"></ion-icon>
+      <ion-label>{{ q.title }}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

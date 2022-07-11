@@ -1,3 +1,4 @@
+import { SharedModule } from './../../../../components/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -8,12 +9,15 @@ import { SymptomsOfDialysisPageRoutingModule } from './symptoms-of-dialysis-rout
 
 import { SymptomsOfDialysisPage } from './symptoms-of-dialysis.page';
 
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SymptomsOfDialysisPageRoutingModule
+    SymptomsOfDialysisPageRoutingModule,
+    SharedModule,
   ],
   declarations: [SymptomsOfDialysisPage]
 })

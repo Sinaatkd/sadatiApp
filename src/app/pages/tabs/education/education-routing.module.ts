@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'treatment',
     loadChildren: () => import('./treatment/treatment.module').then( m => m.TreatmentPageModule)
+  },
+  {
+    path: 'symptoms-of-dialysis',
+    loadChildren: () => import('./symptoms-of-dialysis/symptoms-of-dialysis.module').then( m => m.SymptomsOfDialysisPageModule)
   }
 ];
 
