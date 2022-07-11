@@ -223,8 +223,6 @@ export class SymptomsOfDialysisPage implements OnInit {
   }
 
   showPdf(title, filename) {
-    console.log(title, );
-    
     this.modalCtrl.create({
       component: ShowPdfComponent,
       componentProps: { title, filename },
