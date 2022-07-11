@@ -23,7 +23,11 @@ const routes: Routes = [
   {
     path: 'choose-disease',
     loadChildren: () => import('./choose-disease/choose-disease.module').then( m => m.ChooseDiseasePageModule)
+  },  {
+    path: 'refrences',
+    loadChildren: () => import('./refrences/refrences.module').then( m => m.RefrencesPageModule)
   }
+
 
 ];
 

@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>منابع</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/account"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card mode="ios" *ngFor="let refrence of refrences">
+      <ion-card-header>
+        <ion-card-subtitle>{{ refrence }}</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </ion-list>
+</ion-content>
