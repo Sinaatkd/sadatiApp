@@ -9,12 +9,22 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ShowPdfComponent implements OnInit {
   @Input('title') title: string;
   @Input('filename') filename: string;
-
+  zoomTo = 1;
   constructor(private modalCtrl: ModalController) {}
 
   ngOnInit() {}
 
   onClick() {
     this.modalCtrl.dismiss();
+  }
+
+  zoomIn() {
+    this.zoomTo = this.zoomTo + 0.10;
+  }
+
+  zoomOut() {
+    if (this.zoomTo > 1) {
+       this.zoomTo = this.zoomTo - 0.10;
+    }
   }
 }

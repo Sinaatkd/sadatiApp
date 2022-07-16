@@ -26,6 +26,10 @@ const routes: Routes = [
   },  {
     path: 'refrences',
     loadChildren: () => import('./refrences/refrences.module').then( m => m.RefrencesPageModule)
+  },
+  {
+    path: 'creators',
+    loadChildren: () => import('./creators/creators.module').then( m => m.CreatorsPageModule)
   }
 
 

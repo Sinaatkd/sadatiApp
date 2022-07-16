@@ -17,16 +17,18 @@
         ></ion-icon>
         <ion-label>{{ session.title }}</ion-label>
       </ion-item>
-      <div class="ion-padding" slot="content">
-        <video *ngFor="let video of session.videos"
+      <div class="ion-padding" slot="content"  *ngFor="let video of session.videos">
+        <video
           width="100%"
           controls
+          src="/{{ video.video }}"
           controlsList="nodownload"
           (pause)="onVideoPause($event)"
           (playing)="onPlayingVideo($event, session.id)"
         >
-          <source src="/{{ video.video }}" type="video/mp4">
         </video>
+        <ion-item-divider *ngIf="session.videos?.length > 1">
+        </ion-item-divider>
       </div>
     </ion-accordion>
   </ion-accordion-group>

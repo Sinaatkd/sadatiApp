@@ -21,7 +21,7 @@ export class SymptomsOfDialysisPage implements OnInit {
     {
       id: 1,
       title: 'یبوست',
-      filename: 'یوبوست.pdf',
+      filename: 'یبوست.pdf',
     },
     {
       id: 2,
@@ -173,20 +173,33 @@ export class SymptomsOfDialysisPage implements OnInit {
 
   ngOnInit() {}
 
-  ionViewDidEnter() {
+  ionViewWillEnter() {
     Storage.get({ key: 'selectedQuestions' }).then((res) => {
-      if (JSON.parse(res.value).length > 0) {
+      if (res.value && JSON.parse(res.value).length > 0) {
         this.isSelectionQuestion = true;
         this.selectedQuestions = JSON.parse(res.value);
       }
     });
   }
 
-  onChangeQuestion(questionId) {
+  onChangeQuestion(event, questionId) {
     const question = this.questions.find(
       (question) => question.id === questionId
     );
-    this.selectedQuestions.push(question);
+    if (event.detail.checked) {
+      this.selectedQuestions.push(question);
+    } else {
+      this.selectedQuestions = this.selectedQuestions.filter(
+        (question) => question.id !== questionId
+      );
+    }
+    
+  }
+  onClearData() {
+    Storage.remove({key: 'selectedQuestions'}).then(() => {
+      this.isSelectionQuestion = false;
+      this.selectedQuestions = [];
+    });
   }
 
   onSave() {

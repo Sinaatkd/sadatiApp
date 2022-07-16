@@ -1,3 +1,4 @@
+import { ChartHelpComponent } from './chart-help/chart-help.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { ShowPdfComponent } from './show-pdf/show-pdf.component';
 import { NgModule } from '@angular/core';
@@ -12,10 +13,12 @@ import { IonicModule } from '@ionic/angular';
     PdfViewerModule,
   ],
   declarations: [
-    ShowPdfComponent
+    ShowPdfComponent,
+    ChartHelpComponent
   ],
   exports: [
-    ShowPdfComponent
+    ShowPdfComponent,
+    ChartHelpComponent
   ]
 })
 export class SharedModule {}

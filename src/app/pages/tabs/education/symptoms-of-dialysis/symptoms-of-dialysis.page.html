@@ -5,7 +5,12 @@
 </ion-header>
 
 <ion-content *ngIf="!isSelectionQuestion">
-  <video width="100%" controls>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>آموزش</ion-label>
+    </ion-list-header>
+  </ion-list>
+  <video width="100%" controls style="padding: 10px; border-radius: 20px;">
     <source  src="/assets/symptoms-of-dialysis/علائم نهایی.m4v">
   </video>
   <ion-list>
@@ -14,7 +19,7 @@
     </ion-list-header>
     <ion-item *ngFor="let question of questions">
       <ion-label>{{ question.title }}</ion-label>
-      <ion-checkbox (ionChange)="onChangeQuestion(question.id)" slot="start"></ion-checkbox>
+      <ion-checkbox (ionChange)="onChangeQuestion($event, question.id)" slot="start"></ion-checkbox>
     </ion-item>
     <ion-item button color="primary" class="ion-text-center" (click)="onSave()">
       <ion-label>ذخیره</ion-label>
@@ -23,6 +28,9 @@
 </ion-content>
 
 <ion-content *ngIf="isSelectionQuestion">
+  <ion-button (click)="onClearData()" expand="block" class="ion-margin">
+    ثبت مجدد علائم
+  </ion-button>
   <ion-list>
     <ion-item *ngFor="let q of selectedQuestions" (click)="showPdf(q.title, q.filename)">
       <ion-icon name="document-attach-outline" slot="start" color="danger"></ion-icon>

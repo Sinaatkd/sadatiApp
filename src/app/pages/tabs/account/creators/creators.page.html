@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>سازندگان</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card mode="ios" *ngFor="let creator of creators">
+    <ion-card-header class="ion-text-center">
+      <ion-card-subtitle>{{ creator.fullname }}</ion-card-subtitle>
+      <ion-card-title>Awesome Title</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
