@@ -9,6 +9,15 @@
 
 <ion-content>
   <form [formGroup]="reportForm">
+    <ion-grid>
+      <ion-row class="ion-no-padding">
+        <ion-col size="12" class="ion-no-padding">
+          <ion-button (click)="onSaveData()" [disabled]='reportForm.invalid' mode="ios" expand="block">
+            ذخیره
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
     <ion-item>
       <ion-label position="floating">وزن خشک</ion-label>
       <ion-input formControlName="dryWeight" type="number"></ion-input>
