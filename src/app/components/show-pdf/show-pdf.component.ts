@@ -10,6 +10,8 @@ export class ShowPdfComponent implements OnInit {
   @Input('title') title: string;
   @Input('filename') filename: string;
   zoomTo = 1;
+  isLoading = true;
+  
   constructor(private modalCtrl: ModalController) {}
 
   ngOnInit() {}
@@ -26,5 +28,9 @@ export class ShowPdfComponent implements OnInit {
     if (this.zoomTo > 1) {
        this.zoomTo = this.zoomTo - 0.10;
     }
+  }
+
+  callBackFn(event) {
+    this.isLoading = false;
   }
 }
