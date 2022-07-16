@@ -35,6 +35,10 @@
   <ion-button (click)="onClearData()" expand="block" class="ion-margin">
     ثبت مجدد علائم
   </ion-button>
+  <video width="100%" controls style="padding: 10px; border-radius: 20px;">
+    <source  src="/assets/symptoms-of-dialysis/علائم نهایی.m4v">
+  </video>
+  
   <ion-list>
     <ion-item *ngFor="let q of selectedQuestions" (click)="showPdf(q.title, q.filename)">
       <ion-icon name="document-attach-outline" slot="start" color="danger"></ion-icon>
