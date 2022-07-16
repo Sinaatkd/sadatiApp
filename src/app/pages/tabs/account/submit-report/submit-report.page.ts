@@ -18,19 +18,19 @@ export class SubmitReportPage implements OnInit {
 
   ngOnInit() {
     this.reportForm = new FormGroup({
-      dryWeight: new FormControl(null, { validators: Validators.required }),
-      weightBeforeDialysisSession: new FormControl(null, { validators: Validators.required }),
-      amountOfFluidReceived: new FormControl(null, { validators: Validators.required }),
-      Bun: new FormControl(null, { validators: Validators.required }),
-      Cr: new FormControl(null, { validators: Validators.required }),
-      Hb: new FormControl(null, { validators: Validators.required }),
-      Hct: new FormControl(null, { validators: Validators.required }),
-      Na: new FormControl(null, { validators: Validators.required }),
-      K: new FormControl(null, { validators: Validators.required }),
-      Ca: new FormControl(null, { validators: Validators.required }),
-      P: new FormControl(null, { validators: Validators.required }),
-      Feritin: new FormControl(null, { validators: Validators.required }),
-      PTH: new FormControl(null, { validators: Validators.required }),
+      dryWeight: new FormControl(0, { validators: Validators.required }),
+      weightBeforeDialysisSession: new FormControl(0, { validators: Validators.required }),
+      amountOfFluidReceived: new FormControl(0, { validators: Validators.required }),
+      Bun: new FormControl(0, { validators: Validators.required }),
+      Cr: new FormControl(0, { validators: Validators.required }),
+      Hb: new FormControl(0, { validators: Validators.required }),
+      Hct: new FormControl(0, { validators: Validators.required }),
+      Na: new FormControl(0, { validators: Validators.required }),
+      K: new FormControl(0, { validators: Validators.required }),
+      Ca: new FormControl(0, { validators: Validators.required }),
+      P: new FormControl(0, { validators: Validators.required }),
+      Feritin: new FormControl(0, { validators: Validators.required }),
+      PTH: new FormControl(0, { validators: Validators.required }),
     })
   }
 
