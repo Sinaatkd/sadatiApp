@@ -8,7 +8,7 @@
   <ion-card mode="ios" *ngFor="let creator of creators">
     <ion-card-header class="ion-text-center">
       <ion-card-subtitle>{{ creator.fullname }}</ion-card-subtitle>
-      <ion-card-title>Awesome Title</ion-card-title>
+      <ion-card-subtitle *ngIf="creator.phoneNumber">{{ creator.phoneNumber }}</ion-card-subtitle>
     </ion-card-header>
   </ion-card>
 </ion-content>
