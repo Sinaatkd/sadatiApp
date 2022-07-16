@@ -28,16 +28,16 @@ export class EditDataPage implements OnInit {
       this.accountFormGroup = new FormGroup({
         firstName: new FormControl(userData.firstName, { validators: [Validators.required] }),
         lastName: new FormControl(userData.lastName, { validators: [Validators.required] }),
-        phoneNumber: new FormControl(userData.phoneNumber, { validators: [Validators.required] }),
-        age: new FormControl(userData.age, { validators: [Validators.required] }),
-        healthStatus: new FormControl(userData.healthStatus, { validators: [Validators.required] }),
-        gender: new FormControl(userData.gender, { validators: [Validators.required] }),
-        marital: new FormControl(userData.marital, { validators: [Validators.required] }),
-        job: new FormControl(userData.job, { validators: [Validators.required] }),
-        nationality: new FormControl(userData.nationality, { validators: [Validators.required] }),
-        familyCount: new FormControl(userData.familyCount, { validators: [Validators.required] }),
-        liveWith: new FormControl(userData.liveWith, { validators: [Validators.required] }),
-        education: new FormControl(userData.education, { validators: [Validators.required] })
+        phoneNumber: new FormControl(userData.phoneNumber),
+        age: new FormControl(userData.age),
+        healthStatus: new FormControl(userData.healthStatus),
+        gender: new FormControl(userData.gender),
+        marital: new FormControl(userData.marital),
+        job: new FormControl(userData.job),
+        nationality: new FormControl(userData.nationality),
+        familyCount: new FormControl(userData.familyCount),
+        liveWith: new FormControl(userData.liveWith),
+        education: new FormControl(userData.education)
       });
     })
   }
