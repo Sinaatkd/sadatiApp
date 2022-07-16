@@ -6,6 +6,10 @@
 
 <ion-content *ngIf="!isSelectionQuestion">
   <ion-list>
+    <ion-item button color="primary" class="ion-text-center" (click)="onSave()">
+      <ion-label>ذخیره</ion-label>
+    </ion-item>
+    
     <ion-list-header>
       <ion-label>آموزش</ion-label>
     </ion-list-header>
