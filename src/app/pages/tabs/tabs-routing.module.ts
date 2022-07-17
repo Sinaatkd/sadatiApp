@@ -23,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/education',
+    redirectTo: '/tabs/account',
     pathMatch: 'full'
   },
 
