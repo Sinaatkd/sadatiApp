@@ -9,6 +9,16 @@
 
 <ion-content>
   <form *ngIf="accountFormGroup" [formGroup]="accountFormGroup">
+    <ion-grid>
+      <ion-row class="ion-no-padding">
+        <ion-col size="12" class="ion-no-padding">
+          <ion-button (click)="onSaveData()" [disabled]="accountFormGroup.invalid" mode="ios" expand="block">
+            ذخیره
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
     <ion-item>
       <ion-label position="floating">نام</ion-label>
       <ion-input formControlName="firstName"></ion-input>
