@@ -19,7 +19,7 @@
       </ion-item>
       <div class="ion-padding" slot="content"  *ngFor="let video of session.videos; let i = index">
         <ion-item button lines="none" color="light" class="ion-no-margin" [routerLink]="['show-video', video.video]">
-          <ion-label>مشاهده ی فیلم شماره ی {{ i + 1 }}</ion-label>
+          <ion-label>بخش {{ i + 1 }}</ion-label>
         </ion-item>
       </div>
     </ion-accordion>
