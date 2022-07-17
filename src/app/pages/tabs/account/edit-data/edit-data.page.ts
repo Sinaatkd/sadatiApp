@@ -45,12 +45,15 @@ export class EditDataPage implements OnInit {
   onSaveData() {
 
     const formData = this.accountFormGroup.controls;
-    const userPhoneNumber = formData.phoneNumber.value.toString();
-    
+    let userPhoneNumber = formData.phoneNumber.value !== null ? formData.phoneNumber.value.toString() : null;
+    if (userPhoneNumber) {
+      userPhoneNumber = userPhoneNumber [0] === '0' ? userPhoneNumber : "0" + userPhoneNumber
+    }
+
     const userData = {
       firstName: formData.firstName.value,
       lastName: formData.lastName.value,
-      phoneNumber: userPhoneNumber[0] === '0' ? userPhoneNumber : "0" + userPhoneNumber,
+      phoneNumber: userPhoneNumber,
       age: formData.age.value,
       healthStatus: formData.healthStatus.value,
       gender: formData.gender.value,
