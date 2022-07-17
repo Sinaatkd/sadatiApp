@@ -1,9 +1,80 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>edit-report</ion-title>
+    <ion-title>ویرایش گزارش</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <form [formGroup]="reportForm" *ngIf="reportForm">
+    <ion-grid>
+      <ion-row class="ion-no-padding">
+        <ion-col size="12" class="ion-no-padding">
+          <ion-button (click)="onSaveData()" [disabled]='reportForm.invalid' mode="ios" expand="block">
+            ذخیره
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-item>
+      <ion-label position="floating">وزن خشک</ion-label>
+      <ion-input formControlName="dryWeight" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">وزن قبل از جلسه دیالیز</ion-label>
+      <ion-input formControlName="weightBeforeDialysisSession" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">مقدار مایعات دریافتی</ion-label>
+      <ion-input formControlName="amountOfFluidReceived" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">مقدار اوره خون </ion-label>
+      <ion-input formControlName="Bun" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">مقدار کراتینین</ion-label>
+      <ion-input formControlName="Cr" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">مقدار هموگلوبین</ion-label>
+      <ion-input formControlName="Hb" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">مقدار هماتوکریت</ion-label>
+      <ion-input formControlName="Hct" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">مقدار سدیم</ion-label>
+      <ion-input formControlName="Na" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">مقدار پتاسیم</ion-label>
+      <ion-input formControlName="K" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">مقدار کلسیم</ion-label>
+      <ion-input formControlName="Ca" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">مقدار فسفر</ion-label>
+      <ion-input formControlName="P" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">مقدار فریتین</ion-label>
+      <ion-input formControlName="Feritin" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">مقدار هورمون پاراتیروئید</ion-label>
+      <ion-input formControlName="PTH" type="number"></ion-input>
+    </ion-item>
+    <ion-grid>
+      <ion-row class="ion-no-padding">
+        <ion-col size="12" class="ion-no-padding">
+          <ion-button (click)="onSaveData()" [disabled]='reportForm.invalid' mode="ios" expand="block">
+            ذخیره
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>
