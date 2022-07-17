@@ -17,18 +17,10 @@
         ></ion-icon>
         <ion-label>{{ session.title }}</ion-label>
       </ion-item>
-      <div class="ion-padding" slot="content"  *ngFor="let video of session.videos">
-        <video
-          width="100%"
-          controls
-          src="/{{ video.video }}"
-          controlsList="nodownload"
-          (pause)="onVideoPause($event)"
-          (playing)="onPlayingVideo($event, session.id)"
-        >
-        </video>
-        <ion-item-divider *ngIf="session.videos?.length > 1">
-        </ion-item-divider>
+      <div class="ion-padding" slot="content"  *ngFor="let video of session.videos; let i = index">
+        <ion-item button lines="none" color="light" class="ion-no-margin" [routerLink]="['show-video', video.video]">
+          <ion-label>مشاهده ی فیلم شماره ی {{ i + 1 }}</ion-label>
+        </ion-item>
       </div>
     </ion-accordion>
   </ion-accordion-group>

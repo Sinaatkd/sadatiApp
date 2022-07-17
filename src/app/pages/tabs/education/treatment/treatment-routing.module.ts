@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: TreatmentPage
+  },
+  {
+    path: 'show-video/:videoAdress',
+    loadChildren: () => import('./show-video/show-video.module').then( m => m.ShowVideoPageModule)
   }
 ];
 

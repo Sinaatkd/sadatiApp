@@ -11,7 +11,7 @@ export class TreatmentPage implements OnInit {
   sessions = [
     {
       id: 1,
-      title: 'جلسه ۱ - کلیه نهایی',
+      title: 'جلسه ۱ - آشنایی با کلیه',
       videos: [
         {
           video: 'assets/treatment/1.m4v',
@@ -32,7 +32,7 @@ export class TreatmentPage implements OnInit {
     },
     {
       id: 3,
-      title: 'جلسه ۳ - داروها',
+      title: 'جلسه ۳ - داروهای مصرفی',
       videos: [
         {
           video: 'assets/treatment/4.m4v',
@@ -41,7 +41,7 @@ export class TreatmentPage implements OnInit {
     },
     {
       id: 4,
-      title: 'جلسه ۴ - ورزش',
+      title: 'جلسه ۴ - ورزش و فعالیت',
       videos: [
         {
           video: 'assets/treatment/5.m4v',
