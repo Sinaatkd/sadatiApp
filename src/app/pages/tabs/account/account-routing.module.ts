@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'creators',
     loadChildren: () => import('./creators/creators.module').then( m => m.CreatorsPageModule)
+  },
+  {
+    path: 'edit-report',
+    loadChildren: () => import('./edit-report/edit-report.module').then( m => m.EditReportPageModule)
   }
 
 

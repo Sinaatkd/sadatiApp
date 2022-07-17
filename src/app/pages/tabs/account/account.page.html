@@ -46,6 +46,11 @@
     <ion-label>ثبت گزارش</ion-label>
   </ion-item>
   
+  <ion-item *ngIf="isCanEditReport" [routerLink]="['/tabs', 'account', 'edit-report']">
+    <ion-label>ویرایش گزارش</ion-label>
+    <ion-badge color="warning">فقط تا آخر امشب امکان ویرایش وجود دارد</ion-badge>
+  </ion-item>
+
   <ion-item detail [routerLink]="['/talk-with-admin']">
     <ion-label>گفتگو با ادمین</ion-label>
   </ion-item>
