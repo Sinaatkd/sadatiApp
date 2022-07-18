@@ -15,7 +15,10 @@
         </ion-col>
         <ion-col size="6" class="ion-text-end">
           <ion-card-header>
-            <ion-icon (click)="openChartHelpModal('Bun.json')" name="information-circle-sharp"></ion-icon>
+            <ion-icon
+              (click)="openChartHelpModal('Bun.json')"
+              name="information-circle-sharp"
+            ></ion-icon>
           </ion-card-header>
         </ion-col>
       </ion-row>
@@ -34,7 +37,10 @@
         </ion-col>
         <ion-col size="6" class="ion-text-end">
           <ion-card-header>
-            <ion-icon (click)="openChartHelpModal('Cr.json')" name="information-circle-sharp"></ion-icon>
+            <ion-icon
+              (click)="openChartHelpModal('Cr.json')"
+              name="information-circle-sharp"
+            ></ion-icon>
           </ion-card-header>
         </ion-col>
       </ion-row>
@@ -46,14 +52,29 @@
   <ion-card mode="ios">
     <ion-grid>
       <ion-row>
-        <ion-col size="6">
+        <ion-col size="12">
           <ion-card-header>
-            نمودار هموگلوبین(گرم در دسی لیتر)
+            نمودار وزن قبل از جلسه دیالیز(کیلوگرم)
           </ion-card-header>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-card-content>
+      <canvas #weightBeforeDialysisSessionCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+  <ion-card mode="ios">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-header> نمودار هموگلوبین(گرم در دسی لیتر) </ion-card-header>
         </ion-col>
         <ion-col size="6" class="ion-text-end">
           <ion-card-header>
-            <ion-icon (click)="openChartHelpModal('Hb.json')" name="information-circle-sharp"></ion-icon>
+            <ion-icon
+              (click)="openChartHelpModal('Hb.json')"
+              name="information-circle-sharp"
+            ></ion-icon>
           </ion-card-header>
         </ion-col>
       </ion-row>
@@ -66,13 +87,14 @@
     <ion-grid>
       <ion-row>
         <ion-col size="6">
-          <ion-card-header>
-            نمودار هماتوکریت(گرم در دسی لیتر)
-          </ion-card-header>
+          <ion-card-header> نمودار هماتوکریت(گرم در دسی لیتر) </ion-card-header>
         </ion-col>
         <ion-col size="6" class="ion-text-end">
           <ion-card-header>
-            <ion-icon (click)="openChartHelpModal('Hct.json')" name="information-circle-sharp"></ion-icon>
+            <ion-icon
+              (click)="openChartHelpModal('Hct.json')"
+              name="information-circle-sharp"
+            ></ion-icon>
           </ion-card-header>
         </ion-col>
       </ion-row>
@@ -85,13 +107,14 @@
     <ion-grid>
       <ion-row>
         <ion-col size="6">
-          <ion-card-header>
-            نمودار سدیم(meq/l)
-          </ion-card-header>
+          <ion-card-header> نمودار سدیم(meq/l) </ion-card-header>
         </ion-col>
         <ion-col size="6" class="ion-text-end">
           <ion-card-header>
-            <ion-icon (click)="openChartHelpModal('Na.json')" name="information-circle-sharp"></ion-icon>
+            <ion-icon
+              (click)="openChartHelpModal('Na.json')"
+              name="information-circle-sharp"
+            ></ion-icon>
           </ion-card-header>
         </ion-col>
       </ion-row>
@@ -104,13 +127,14 @@
     <ion-grid>
       <ion-row>
         <ion-col size="6">
-          <ion-card-header>
-            نمودار پتاسیم(میلی مول در لیتر)
-          </ion-card-header>
+          <ion-card-header> نمودار پتاسیم(میلی مول در لیتر) </ion-card-header>
         </ion-col>
         <ion-col size="6" class="ion-text-end">
           <ion-card-header>
-            <ion-icon (click)="openChartHelpModal('K.json')" name="information-circle-sharp"></ion-icon>
+            <ion-icon
+              (click)="openChartHelpModal('K.json')"
+              name="information-circle-sharp"
+            ></ion-icon>
           </ion-card-header>
         </ion-col>
       </ion-row>
@@ -129,7 +153,10 @@
         </ion-col>
         <ion-col size="6" class="ion-text-end">
           <ion-card-header>
-            <ion-icon (click)="openChartHelpModal('Ca.json')" name="information-circle-sharp"></ion-icon>
+            <ion-icon
+              (click)="openChartHelpModal('Ca.json')"
+              name="information-circle-sharp"
+            ></ion-icon>
           </ion-card-header>
         </ion-col>
       </ion-row>
@@ -142,13 +169,14 @@
     <ion-grid>
       <ion-row>
         <ion-col size="6">
-          <ion-card-header>
-            نمودار فسفر(میلی گرم در دسی لیتر)
-          </ion-card-header>
+          <ion-card-header> نمودار فسفر(میلی گرم در دسی لیتر) </ion-card-header>
         </ion-col>
         <ion-col size="6" class="ion-text-end">
           <ion-card-header>
-            <ion-icon (click)="openChartHelpModal('P.json')" name="information-circle-sharp"></ion-icon>
+            <ion-icon
+              (click)="openChartHelpModal('P.json')"
+              name="information-circle-sharp"
+            ></ion-icon>
           </ion-card-header>
         </ion-col>
       </ion-row>
@@ -161,13 +189,14 @@
     <ion-grid>
       <ion-row>
         <ion-col size="6">
-          <ion-card-header>
-            نمودار فریتین(ng/ml)
-          </ion-card-header>
+          <ion-card-header> نمودار فریتین(ng/ml) </ion-card-header>
         </ion-col>
         <ion-col size="6" class="ion-text-end">
           <ion-card-header>
-            <ion-icon (click)="openChartHelpModal('Feritin.json')" name="information-circle-sharp"></ion-icon>
+            <ion-icon
+              (click)="openChartHelpModal('Feritin.json')"
+              name="information-circle-sharp"
+            ></ion-icon>
           </ion-card-header>
         </ion-col>
       </ion-row>
@@ -186,7 +215,10 @@
         </ion-col>
         <ion-col size="6" class="ion-text-end">
           <ion-card-header>
-            <ion-icon (click)="openChartHelpModal('PTH.json')" name="information-circle-sharp"></ion-icon>
+            <ion-icon
+              (click)="openChartHelpModal('PTH.json')"
+              name="information-circle-sharp"
+            ></ion-icon>
           </ion-card-header>
         </ion-col>
       </ion-row>

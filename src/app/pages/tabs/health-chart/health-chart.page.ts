@@ -22,6 +22,7 @@ export class HealthChartPage implements OnInit {
   @ViewChild('PCanvas') private PCanvas: ElementRef;
   @ViewChild('FeritinCanvas') private FeritinCanvas: ElementRef;
   @ViewChild('PTHCanvas') private PTHCanvas: ElementRef;
+  @ViewChild('weightBeforeDialysisSessionCanvas') weightBeforeDialysisSessionCanvas: ElementRef;
   generalStatsChart: any;
   BunChart: any;
   CrChart: any;
@@ -33,6 +34,8 @@ export class HealthChartPage implements OnInit {
   PChart: any;
   FeritinChart: any;
   PTHChart: any;
+  weightBeforeDialysisSessionChart: any;
+
 
 
   BunData: number[] = [];
@@ -45,10 +48,10 @@ export class HealthChartPage implements OnInit {
   PData: number[] = [];
   FeritinData: number[] = [];
   PTHData: number[] = [];
+  weightBeforeDialysisSessionData: number[] = [];
   dates: string[] = [];
 
   constructor(
-    private http: HttpClient,
     private modalCtrl: ModalController
   ) { }
 
@@ -63,6 +66,8 @@ export class HealthChartPage implements OnInit {
     Storage.get({ key: 'reports' }).then(val => {
       for (const data of JSON.parse(val.value)) {
         this.BunData.push(parseInt(data.Bun, 0))
+
+        this.weightBeforeDialysisSessionData.push(parseInt(data.weightBeforeDialysisSession, 0))
 
         this.CrData.push(parseInt(data.Cr, 0))
 
@@ -116,6 +121,37 @@ export class HealthChartPage implements OnInit {
         }
       });
 
+      generatedColor = this.getRandomColor()
+      this.weightBeforeDialysisSessionChart = new Chart(this.weightBeforeDialysisSessionCanvas.nativeElement, {
+        type: 'line',
+        data: {
+          labels: this.dates,
+          datasets: [
+            {
+              label: 'نمودار وزن قبل  جلسه دیالیز',
+              borderColor: generatedColor[0],
+              borderCapStyle: 'square',
+              borderDash: [],
+              fill: true,
+              borderDashOffset: 0.0,
+              borderJoinStyle: 'miter',
+              pointBorderColor: generatedColor[0],
+              backgroundColor: generatedColor[1],
+              pointBackgroundColor: '#fff',
+              pointBorderWidth: 1,
+              pointHoverRadius: 5,
+              pointHoverBackgroundColor: generatedColor[0],
+              pointHoverBorderColor: generatedColor[0],
+              pointHoverBorderWidth: 2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              data: this.weightBeforeDialysisSessionData,
+              spanGaps: true,
+            },
+          ]
+        }
+      });
+      
       generatedColor = this.getRandomColor()
 
       this.CrChart = new Chart(this.CrCanvas.nativeElement, {
