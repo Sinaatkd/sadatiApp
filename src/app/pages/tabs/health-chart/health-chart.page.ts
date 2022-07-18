@@ -23,6 +23,7 @@ export class HealthChartPage implements OnInit {
   @ViewChild('FeritinCanvas') private FeritinCanvas: ElementRef;
   @ViewChild('PTHCanvas') private PTHCanvas: ElementRef;
   @ViewChild('weightBeforeDialysisSessionCanvas') weightBeforeDialysisSessionCanvas: ElementRef;
+  @ViewChild('dryWeightCanvas') dryWeightCanvas: ElementRef;
   generalStatsChart: any;
   BunChart: any;
   CrChart: any;
@@ -35,6 +36,7 @@ export class HealthChartPage implements OnInit {
   FeritinChart: any;
   PTHChart: any;
   weightBeforeDialysisSessionChart: any;
+  dryWeightChart: any;
 
 
 
@@ -49,6 +51,7 @@ export class HealthChartPage implements OnInit {
   FeritinData: number[] = [];
   PTHData: number[] = [];
   weightBeforeDialysisSessionData: number[] = [];
+  dryWeightData: number[] = [];
   dates: string[] = [];
 
   constructor(
@@ -68,6 +71,8 @@ export class HealthChartPage implements OnInit {
         this.BunData.push(parseInt(data.Bun, 0))
 
         this.weightBeforeDialysisSessionData.push(parseInt(data.weightBeforeDialysisSession, 0))
+
+        this.dryWeightData.push(parseInt(data.dryWeight, 0))
 
         this.CrData.push(parseInt(data.Cr, 0))
 
@@ -146,6 +151,38 @@ export class HealthChartPage implements OnInit {
               pointRadius: 1,
               pointHitRadius: 10,
               data: this.weightBeforeDialysisSessionData,
+              spanGaps: true,
+            },
+          ]
+        }
+      });
+
+      
+      generatedColor = this.getRandomColor()
+      this.dryWeightChart = new Chart(this.dryWeightCanvas.nativeElement, {
+        type: 'line',
+        data: {
+          labels: this.dates,
+          datasets: [
+            {
+              label: 'نمودار وزن خشک',
+              borderColor: generatedColor[0],
+              borderCapStyle: 'square',
+              borderDash: [],
+              fill: true,
+              borderDashOffset: 0.0,
+              borderJoinStyle: 'miter',
+              pointBorderColor: generatedColor[0],
+              backgroundColor: generatedColor[1],
+              pointBackgroundColor: '#fff',
+              pointBorderWidth: 1,
+              pointHoverRadius: 5,
+              pointHoverBackgroundColor: generatedColor[0],
+              pointHoverBorderColor: generatedColor[0],
+              pointHoverBorderWidth: 2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              data: this.dryWeightData,
               spanGaps: true,
             },
           ]
