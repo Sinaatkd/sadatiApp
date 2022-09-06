@@ -1,11 +1,13 @@
-import { ShowPdfComponent } from './../../../../components/show-pdf/show-pdf.component';
+import { FileOpener } from '@awesome-cordova-plugins/file-opener/ngx';
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@capacitor/storage';
 import {
   AlertController,
   ToastController,
   ModalController,
+  LoadingController,
 } from '@ionic/angular';
+import { File } from '@awesome-cordova-plugins/file/ngx';
 
 @Component({
   selector: 'app-symptoms-of-dialysis',
@@ -86,7 +88,7 @@ export class SymptomsOfDialysisPage implements OnInit {
     {
       id: 14,
       title: 'درد استخوان یا مفصل',
-      filename: 'درد استخوان و مفصل.pdf',
+      filename: 'درد مفصل و استخوان.pdf',
     },
     {
       id: 15,
@@ -168,7 +170,9 @@ export class SymptomsOfDialysisPage implements OnInit {
   constructor(
     private alertCtrl: AlertController,
     private toastCtrl: ToastController,
-    private modalCtrl: ModalController
+    private file: File,
+    private fileOpener: FileOpener,
+    private loadingCtrl: LoadingController
   ) {}
 
   ngOnInit() {}
@@ -193,10 +197,9 @@ export class SymptomsOfDialysisPage implements OnInit {
         (question) => question.id !== questionId
       );
     }
-    
   }
   onClearData() {
-    Storage.remove({key: 'selectedQuestions'}).then(() => {
+    Storage.remove({ key: 'selectedQuestions' }).then(() => {
       this.isSelectionQuestion = false;
       this.selectedQuestions = [];
     });
@@ -236,9 +239,24 @@ export class SymptomsOfDialysisPage implements OnInit {
   }
 
   showPdf(title, filename) {
-    this.modalCtrl.create({
-      component: ShowPdfComponent,
-      componentProps: { title, filename },
-    }).then(modalEl => modalEl.present());
+    this.loadingCtrl.create({
+      message: 'لطفا صبر کنید.'
+    }).then(loadingEl => {
+      loadingEl.present();
+      const filePath = this.file.applicationDirectory + 'public/assets/symptoms-of-dialysis/pdf';
+      this.file
+      .copyFile(filePath, filename, this.file.dataDirectory, filename)
+      .then( result => {
+        loadingEl.dismiss();
+        this.fileOpener.open(result.nativeURL, 'application/pdf');
+      }, error => {
+        loadingEl.dismiss();
+        this.toastCtrl.create({
+          message: 'باز کردن فایل با مشکل مواجه شد.',
+          color:'danger',
+          duration: 2000,
+        }).then(toastEl => toastEl.present());
+      });
+    })
   }
 }

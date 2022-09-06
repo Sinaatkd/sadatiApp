@@ -1,4 +1,3 @@
-import { PinchZoomModule } from 'ngx-pinch-zoom';
 import { ChartHelpComponent } from './chart-help/chart-help.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { ShowPdfComponent } from './show-pdf/show-pdf.component';
@@ -12,7 +11,6 @@ import { IonicModule } from '@ionic/angular';
     CommonModule,
     IonicModule,
     PdfViewerModule,
-    PinchZoomModule,
   ],
   declarations: [
     ShowPdfComponent,

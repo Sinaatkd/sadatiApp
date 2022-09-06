@@ -9,8 +9,6 @@ import { SymptomsOfDialysisPageRoutingModule } from './symptoms-of-dialysis-rout
 
 import { SymptomsOfDialysisPage } from './symptoms-of-dialysis.page';
 
-import { PdfViewerModule } from 'ng2-pdf-viewer';
-
 @NgModule({
   imports: [
     CommonModule,
